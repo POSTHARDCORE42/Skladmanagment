@@ -1,0 +1,101 @@
+﻿<Window x:Class="Skladmanagment.design.homewindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Skladmanagment.design"
+        mc:Ignorable="d"
+        Title="Домашняя страница" Height="720" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="/design/mvid.png"/>
+    </Window.Background>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <Setter Property="BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="mane">
+        <Grid x:Name="navigate" Margin="120,0,112,0" Width="290" Height="383" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="22" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="22" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="22" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="22" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="22" />
+            </Grid.RowDefinitions>
+
+            <Button x:Name="Sklad" Content="1" Grid.Row="0" Margin="0" Width="290" Height="56" BorderBrush="{x:Null}" Foreground="{x:Null}" FocusVisualStyle="{x:Null}" Click="Sklad_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/design/Group 4.png" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="tovar" Content="2" Grid.Row="2" Margin="0" Height="59" Foreground="{x:Null}" BorderBrush="{x:Null}" FocusVisualStyle="{x:Null}" Click="tovar_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/design/Group 5.png" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="client" Content="3" Grid.Row="4" Margin="0" Height="59" Foreground="{x:Null}" BorderBrush="{x:Null}" FocusVisualStyle="{x:Null}" Click="client_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/design/Group 6.png" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Nkladnaya" Content="4" Grid.Row="6" Margin="0" Height="59" Foreground="{x:Null}" BorderBrush="{x:Null}" FocusVisualStyle="{x:Null}" Click="Nkladnaya_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/design/Group 7.png" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Otchyet" Content="5" Grid.Row="8" Margin="0" Height="59" Foreground="{x:Null}" BorderBrush="{x:Null}" FocusVisualStyle="{x:Null}" Click="Otchyet_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/design/Group 8.png" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+
+        </Grid>
+        <Button x:Name="logout" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="155" BorderBrush="{x:Null}" Foreground="{x:Null}" FocusVisualStyle="{x:Null}" Click="logout_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/design/Group 12.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="allSklad" Content="" HorizontalAlignment="Left" Margin="945,135,0,0" VerticalAlignment="Top" FontFamily="Impact" FontSize="48"/>
+        <Label x:Name="allTovar" Content="" HorizontalAlignment="Left" Margin="945,215,0,0" VerticalAlignment="Top" FontFamily="Impact" FontSize="48"/>
+        <Label x:Name="allClient" Content="" HorizontalAlignment="Left" Margin="927,295,0,0" VerticalAlignment="Top" FontFamily="Impact" FontSize="48"/>
+        <Label x:Name="allPostav" Content="" HorizontalAlignment="Left" Margin="991,376,0,0" VerticalAlignment="Top" FontFamily="Impact" FontSize="48"/>
+        <Label x:Name="allPribyl" Content="" HorizontalAlignment="Left" Margin="789,450,0,0" VerticalAlignment="Top" FontFamily="Impact" FontSize="48"/>
+        <Button Content="Обновить" HorizontalAlignment="Left" Margin="1154,64,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+    </Grid>
+</Window>

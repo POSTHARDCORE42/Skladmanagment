@@ -1,0 +1,32 @@
+﻿<Window x:Class="Skladmanagment.EditSkladWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Skladmanagment"
+        mc:Ignorable="d"
+        Title="Изменение" Height="285" Width="400" ResizeMode="NoResize">
+    <Grid Margin="10,10,10,4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="Наименование:"/>
+        <TextBox x:Name="textBoxName" Grid.Row="1" Margin="5"/>
+
+        <Label Grid.Row="2" Content="Адрес:"/>
+        <TextBox x:Name="textBoxAddress" Grid.Row="3" Margin="5"/>
+
+        <Label Grid.Row="4" Content="Кладовщик:"/>
+        <TextBox x:Name="textBoxKladov" Grid.Row="4" Margin="0,30,5,-20"/>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,72,5,-62">
+            <Button Content="Сохранить" Click="btnSave_Click" Margin="5"/>
+            <Button Content="Отмена" Click="btnCancel_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>
